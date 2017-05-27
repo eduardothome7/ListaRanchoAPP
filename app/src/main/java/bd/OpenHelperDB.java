@@ -10,16 +10,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class OpenHelperDB extends SQLiteOpenHelper {
     private static String dbname = "rancho.bd";
-    private static String createTable = "CREATE TABLE itens" +
+    private static String createTable = "CREATE TABLE products" +
             "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "name VARCHAR(30)," +
             "description VARCHAR(200)," +
-            "price decimal(4,2)," +
-            "quantity INTEGER" +
+            "price DECIMAL(4,2)," +
+            "quantity INTEGER," +
+            "checked INTEGER"+
             ")";
 
     public OpenHelperDB(Context context) {
-        super(context, dbname, null, 1);
+        super(context, dbname, null, 2);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class OpenHelperDB extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE itens");
+        db.execSQL("DROP TABLE products");
         db.execSQL(createTable);
     }
 }

@@ -5,33 +5,33 @@
     android:weightSum="1">
 
     <EditText
-        android:id="@+id/txtItemNome"
+        android:id="@+id/txtItemName"
         android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
         android:layout_marginTop="22dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Produto" />
+        android:hint="Produto"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/txtItemPreco"
+        android:id="@+id/txtItemPrice"
         android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="R$" />
+        android:hint="R$ 0"
+        android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/txtItemDescricao"
+        android:id="@+id/txtItemDescription"
         android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
+        android:layout_weight="0.39"
         android:ems="10"
-        android:inputType="textMultiLine"
-        android:text="Descrição"
-        android:layout_weight="0.39" />
+        android:hint="Descreva o produto"
+        android:inputType="textMultiLine" />
 
     <LinearLayout
         android:layout_width="361dp"
@@ -40,24 +40,25 @@
         android:weightSum="1">
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/txtItemQuantity"
             style="@style/Widget.AppCompat.AutoCompleteTextView"
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="26dp"
             android:ems="10"
+            android:hint="1"
             android:inputType="number"
-            android:text="0x"
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/ItemPreco"
+            android:id="@+id/fieldTotalPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="R$ 0.0"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     </LinearLayout>
+
 
     <Button
         android:id="@+id/button"
@@ -66,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="72dp"
+        android:onClick="save"
         android:text="Incluir"
         android:textAlignment="center" />
 
