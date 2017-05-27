@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        //TextView txtTotal = (TextView) findViewById(R.id.txtTotal);
+
     }
 
     @Override
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         listProducts = dao.all();
         adapter.setListProducts(listProducts);
         adapter.notifyDataSetChanged();
+        TextView txtTotal = (TextView) findViewById(R.id.txtTotal);
     }
 
     public void openItemAdd(View v){

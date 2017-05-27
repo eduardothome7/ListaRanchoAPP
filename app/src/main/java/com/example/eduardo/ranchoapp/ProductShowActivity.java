@@ -33,7 +33,7 @@ public class ProductShowActivity extends AppCompatActivity {
         txtDescription.setText(product.getDescription());
 
         TextView txtQuantity = (TextView) findViewById(R.id.txtQuantityShow);
-        txtQuantity.setText(product.getQuantity());
+        txtQuantity.setText(Integer.toString(product.getQuantity()));
 
         TextView txtPrice = (TextView) findViewById(R.id.txtPriceShow);
         txtPrice.setText("R$ "+Double.toString(product.getTotal()));
