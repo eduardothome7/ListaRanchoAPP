@@ -47,14 +47,14 @@
             android:layout_marginLeft="26dp"
             android:ems="10"
             android:inputType="number"
-            android:text="0"
+            android:text="0x"
             android:textSize="30sp" />
 
         <TextView
             android:id="@+id/ItemPreco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="R$"
+            android:text="R$ 0.0"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     </LinearLayout>

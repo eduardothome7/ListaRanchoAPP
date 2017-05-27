@@ -14,6 +14,7 @@ public class Item implements Serializable {
     private String description;
     private double price;
     private int quantity;
+    private boolean checked;
 
     public Item(String name, String description, double price, int quantity) {
         this.name = name;
@@ -68,5 +69,13 @@ public class Item implements Serializable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
     }
 }
