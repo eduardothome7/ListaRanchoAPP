@@ -59,6 +59,14 @@ public class ProductDAO {
         db.close();
     }
 
+    public void getCartAll(){
+        SQLiteDatabase db = openHelperDB.getWritableDatabase();
+        ContentValues params = new ContentValues();
+        params.put("checked",0);
+        db.update("products",params,null, null);
+        db.close();
+    }
+
     public List<Product> all(){
         SQLiteDatabase db = openHelperDB.getReadableDatabase();
         Cursor cursor = db.query("products",

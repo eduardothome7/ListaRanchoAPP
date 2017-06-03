@@ -18,7 +18,7 @@ import model.Product;
 public class MainActivity extends AppCompatActivity {
     List<Product> listProducts = new ArrayList<>();
     ProductAdapter adapter;
-
+    ProductDAO dao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +45,16 @@ public class MainActivity extends AppCompatActivity {
         );
 
         //TextView txtTotal = (TextView) findViewById(R.id.txtTotal);
-
+        //coloca os produtos de volta no carrinho quando inicia a aplicacao
+        dao = new ProductDAO(this);
+        dao.getCartAll();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         //faz nova busca no banco e atualiza em caso de inclusao de item
-        ProductDAO dao = new ProductDAO(this);
+        dao = new ProductDAO(this);
         listProducts = dao.all();
         adapter.setListProducts(listProducts);
         adapter.notifyDataSetChanged();
